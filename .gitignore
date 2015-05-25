@@ -1,0 +1,7 @@
+*.swp
+public/build/
+public/lib/
+logs/*.txt
+logs/*.log
+node_modules/
+*.log
