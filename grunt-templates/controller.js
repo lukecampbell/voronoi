@@ -4,7 +4,7 @@
  */
 
 var App = function(){}
-_.extend(App.prototype.extend, {
+_.extend(App.prototype, {
   views: {},
   models: {},
   collections: {},

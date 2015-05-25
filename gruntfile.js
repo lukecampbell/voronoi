@@ -19,6 +19,9 @@ module.exports = function(grunt) {
         files: {
           "public/build/templates/index.js" : [
             "public/partials/Index.jade"
+          ],
+          "public/build/templates/barcharts.js" : [
+            "public/partials/BarChart.jade"
           ]
         }
       }

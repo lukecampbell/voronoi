@@ -1,0 +1,16 @@
+// barcharts.jade
+extends layout
+
+block css
+  each css in assets.barcharts.css
+    link(rel="stylesheet", href=css, type="text/css")
+
+block js
+  each js in assets.barcharts.js
+    script(type="text/javascript", src=js)
+
+block body
+  .container-fluid
+    .row
+      .col-sm-12
+        #barchart-view
