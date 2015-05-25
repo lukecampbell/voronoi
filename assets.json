@@ -21,13 +21,16 @@
     "index": {
         "css": {
             "public/build/css/index.min.css": [
-                "public/stylesheets/index.css"
+                "public/stylesheets/index.css",
+                "public/stylesheets/voronoi.css"
             ]
         },
         "js": {
             "public/build/js/index.min.js": [
+                "public/lib/d3/d3.js",
                 "public/build/templates/index.js",
                 "public/javascripts/views/IndexView.js",
+                "public/javascripts/views/VoronoiView.js",
                 "public/javascripts/controllers/index.js"
             ]
         }

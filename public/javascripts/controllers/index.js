@@ -6,10 +6,10 @@
 var App = function(){}
 _.extend(App.prototype, {
   views: {
-    indexView: null
+    voronoiView: null
   },
   start: function() {
-    this.views.indexView = new IndexView({el: $('#index-view')}).render();
+    this.views.voronoiView = new VoronoiView({el: $('#voronoi-view')}).render();
     console.log("Application launched");
   }
 });
