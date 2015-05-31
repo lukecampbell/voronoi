@@ -47,5 +47,20 @@
                 "public/javascripts/controllers/BarCharts.js"
             ]
         }
+    },
+    "svgcharts" : {
+        "css": {
+            "public/build/css/svgcharts.min.css": [
+                "public/stylesheets/svgcharts.css"
+            ]
+        },
+        "js": {
+            "public/build/js/svgcharts.min.js": [
+                "public/lib/d3/d3.js",
+                "public/build/templates/svgcharts.js",
+                "public/javascripts/views/SVGChartView.js",
+                "public/javascripts/controllers/SVGCharts.js"
+            ]
+        }
     }
 }

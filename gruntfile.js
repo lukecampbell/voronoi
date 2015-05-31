@@ -22,6 +22,9 @@ module.exports = function(grunt) {
           ],
           "public/build/templates/barcharts.js" : [
             "public/partials/BarChart.jade"
+          ],
+          "public/build/templates/svgcharts.js" : [
+            "public/partials/SVGChart.jade"
           ]
         }
       }
@@ -95,6 +98,7 @@ module.exports = function(grunt) {
       options: {
         name: "ExampleView.js",
         directory: "public/javascripts/views/",
+        templateDir: "public/partials/",
         template: "grunt-templates/view.js"
       }
     },
@@ -138,17 +142,24 @@ module.exports = function(grunt) {
     var template = grunt.file.read(grunt.config('createView.options.template'));
     var regx = /([A-Za-z]+View)(\.js)/g;
     var regxArray = regx.exec(grunt.config('createView.options.name'));
+    var templateName = grunt.config('createView.options.templateName');
     if(regxArray.length < 3) {
       grunt.log.error("Invalid view name, must end in 'View.js'");
       return;
     }
     var output = _.template(template)({
       filepath: path,
-      templateName: grunt.config('createView.options.templateName'),
+      templateName: templateName,
       viewName: regxArray[1]
     });
     grunt.file.write(path, output);
     grunt.log.ok("Created " + path);
+
+    if(!_.isUndefined(templateName) && templateName != "") {
+      var templatePath = grunt.config('createView.options.templateDir') + templateName;
+      grunt.file.write(templatePath, "p This is a partial\n");
+      grunt.log.ok("Created " + templatePath);
+    }
   });
   grunt.registerTask('view', ['prompt:createView', 'createView']);
 
